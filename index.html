@@ -19,11 +19,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -38,7 +39,7 @@
                 <a href="#about" class="nav-item nav-link">About</a>
                 <a href="#qualification" class="nav-item nav-link">Quality</a>
                 <!-- <a href="#portfolio" class="nav-item nav-link">Portfolio</a> -->
-                <a href="/contact.html" class="nav-item nav-link">Contact</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
@@ -57,7 +58,7 @@
                     <div class="typed-text d-none">Front End Developer, Graphic Designer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <!-- <a href="" class="btn btn-outline-light mr-5">Download CV</a> -->
-                        <a href="/contact.html" class="btn btn-outline-light">Contact Me</a>
+                        <!-- <a href="/contact.html" class="btn btn-outline-light">Contact Me</a> -->
                     </div>
                 </div>
             </div>
@@ -312,7 +313,7 @@
 
 
     <!-- Contact Start -->
-    <!-- <div class="container-fluid py-5" id="contact">
+    <div class="container-fluid py-5" id="contact">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
@@ -321,33 +322,33 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div id="form_alerts"></div>
+                        <form  id="contactForm" action="">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
-                                        required="required" data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control p-4" name="name" placeholder="Your Name"
+                                        required="required" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
-                                        required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" class="form-control p-4" name="email" placeholder="Your Email"
+                                        required="required" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                    required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control p-4" name="subject" placeholder="Subject"
+                                    required="required" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
+                                <textarea class="form-control py-3 px-4" rows="5" name="message" placeholder="Message"
                                     required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
+                                    ></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
+                                <button class="btn btn-outline-primary" type="submit" value="SEND">Send
                                     Message</button>
                             </div>
                         </form>
@@ -355,7 +356,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Contact End -->
 
 
@@ -386,7 +387,12 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/typed/typed.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -395,8 +401,9 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <!-- <script src="lib/lightbox/js/lightbox.min.js"></script> -->
 
-    <!-- Template Javascript -->
+    <!-- Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/contact-form.js"></script>
 </body>
 
 </html>

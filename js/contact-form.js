@@ -2,7 +2,7 @@ $("#contactForm").submit((e) => {
     $("#form_alerts").html("<div class='spinner-grow text-primary my-2'></div>")
     e.preventDefault()
     $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbwGyAEPnPybjmDV_T6Fe1O2p6UIzYieYBUJjuCCUD_54CyAxeIYiXh2yXM_C5Rm2lo1/exec",
+        url: "https://script.google.com/macros/s/AKfycbxns4lvaA8WIM7pcrlLikYP8fia6bWnN0OZsoGWSH4qNpAKR1e0GIinj0SZoUpRe7ud/exec",
         data: $("#contactForm").serialize(),
         method: "post",
         success: function (response) {

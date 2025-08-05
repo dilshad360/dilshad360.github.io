@@ -2,349 +2,241 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Mohamed Dilshad - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #0e0e0e;
+            --fg: #f1f1f1;
+            --muted: #818181;
+        }
 
-    <title>Mohamed Dilshad</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        html,
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: "Inter", sans-serif;
+            margin: 0;
+            padding: 0;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            line-height: 1.8;
+        }
 
+        .container {
+            max-width: 720px;
+            margin: 64px auto;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 36px 40px;
+            border: none;
+        }
 
-    <meta name="title" content="Mohamed Dilshad">
-    <meta name="description"
-        content="A self-taught frontend developer & graphic designer who is passionate about computers. An undergraduate student in BSc computer science.">
-    <meta name="keywords" content="dilshad360, web development, frontend, graphic design">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
+        h1,
+        h2 {
+            color: var(--fg);
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
 
-    <!-- Favicon -->
-    <!-- <link href="img/favicon.ico" rel="icon"> -->
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.65em;
+        }
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 3em;
+            margin-bottom: 1.2em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.45em;
+        }
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+        .contact-links {
+            margin: 0.6em 0 2.8em 0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
 
-    <!-- Libraries Stylesheet -->
-    <!-- <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> -->
+        .contact-links a {
+            color: var(--fg);
+            text-decoration: none;
+            margin-right: 1.5em;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
 
+        .section {
+            margin-bottom: 2.4em;
+        }
+
+        .job-role {
+            font-weight: 600;
+            color: var(--fg);
+            font-size: 1.03rem;
+            margin-bottom: 0.18em;
+        }
+
+        .job-info {
+            color: var(--muted);
+            font-size: 0.98em;
+            margin-bottom: 0.5em;
+        }
+
+        ul {
+            padding-left: 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.75em;
+            line-height: 1.75em;
+        }
+
+        .skills-list,
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9em 2em;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: var(--fg);
+        }
+
+        .skills-list li,
+        .languages-list li {
+            background: transparent;
+            border-radius: 0;
+            padding: 0.4em 0.95em;
+            font-size: 1.01rem;
+            color: var(--fg);
+            letter-spacing: 0.02em;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h3 class="m-0 display-5">Dilshad<span class="text-primary">.</span></h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Quality</a>
-                <!-- <a href="#portfolio" class="nav-item nav-link">Portfolio</a> -->
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
+<body>
+    <div class="container">
+        <h1>Mohamed Dilshad</h1>
+        <div class="contact-links">
+            <span>Software Engineer</span><br />
+            <a href="mailto:dilshad360.dev@gmail.com">dilshad360.dev@gmail.com</a>
+            <a href="https://linkedin.com/in/dilshad360">LinkedIn</a>
+            <a href="https://github.com/dilshad360">GitHub</a>
         </div>
-        <a href="#contact" class="btn btn-outline-primary d-none d-lg-block">Contact Me</a>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
-                        Mohamed Dilshad</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Front End Developer, Graphic Designer</div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <!-- <a href="" class="btn btn-outline-light mr-5">Download CV</a> -->
-                        <!-- <a href="/contact.html" class="btn btn-outline-light">Contact Me</a> -->
-                    </div>
-                </div>
-            </div>
+        <div class="section">
+            <span>Skilled developer with 1+ year experience in creating web & mobile
+                apps. Focused on UI/UX, performance, and real-time features. Delivers
+                solutions and leads workshops.</span>
         </div>
+        <h2>Work Experience</h2>
+        <div class="section">
+            <span class="job-role">Junior Frontend Developer</span>
+            <span class="job-info">@Ombrulla | 07/2024–Present, Kochi</span>
+            <ul>
+                <li>Built AI inspection platform: live feed & status via MQTT.</li>
+                <li>
+                    Flutter app: worker tracking, incident reporting, AI photo
+                    inspection.
+                </li>
+                <li>
+                    Redesigned company website, boosting performance by 25% and
+                    achieving SEO score of 100.
+                </li>
+            </ul>
+            <span class="job-role">Frontend Developer (Part-Time)</span>
+            <span class="job-info">@Destinify | 02/2022–09/2022, Remote</span>
+            <ul>
+                <li>Improved landing page UI (+10% user engagement).</li>
+                <li>
+                    Added data listing, metrics, logs, filtering, infinite scroll.
+                </li>
+            </ul>
+            <span class="job-role">Campus Tech Lead</span>
+            <span class="job-info">@TinkerHub | 02/2022–03/2024, Kondotty</span>
+            <ul>
+                <li>Conducted workshops: Web development, Supabase, Notion.</li>
+            </ul>
+            <span class="job-role">Technical Lead</span>
+            <span class="job-info">@Connect EMEA | 02/2022–03/2024, Kondotty</span>
+            <ul>
+                <li>
+                    Developed platforms: score automation, leaderboards, event posters,
+                    literary club showcase, NSS hiring management.
+                </li>
+            </ul>
+        </div>
+        <h2>Education</h2>
+        <div class="section">
+            <strong>BSc Computer Science</strong>, University of Calicut
+            (08/2021–03/2024)<br />
+            <strong>+2 Computer Science</strong>, AR Nagar HSS (05/2019–05/2021)
+        </div>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>ReactJS</li>
+            <li>NextJS</li>
+            <li>TailwindCSS</li>
+            <li>Material UI</li>
+            <li>Flutter</li>
+            <li>MQTT</li>
+            <li>VueJS</li>
+            <li>NuxtJS</li>
+            <li>Firebase</li>
+            <li>Shadcn</li>
+            <li>Framer Motion</li>
+            <li>SCSS</li>
+            <li>Git</li>
+            <li>Figma</li>
+            <li>Photoshop</li>
+            <li>Typescript</li>
+            <li>Nodejs</li>
+            <li>MongoDB</li>
+        </ul>
+        <h2>Projects</h2>
+        <div class="section">
+            <ul>
+                <li>
+                    <strong>Kalart:</strong> Web app for arts festival; live
+                    leaderboard, auto poster announcements, ReactJS, Vite, Framer
+                    Motion.
+                </li>
+                <li>
+                    <strong>Admission Management:</strong> Admin panel, PDF forms, Excel
+                    export, streamlined student processing. ReactJS, Material UI.
+                </li>
+                <li>
+                    <strong>TheTechTalk:</strong> Tech news site. 10 daily articles,
+                    cron updates. ReactJS, Typescript, Node.js, MongoDB.
+                </li>
+                <li>
+                    <strong>OvScribe:</strong> Content publishing platform. User roles,
+                    rich editor, bookmarks. Next.js, Firebase, TailwindCSS.
+                </li>
+                <li>
+                    <strong>Wingfire Shooter:</strong> Indie retro space game, Godot
+                    Engine, GDScript, 2D pixel art.
+                </li>
+            </ul>
+        </div>
+        <h2>Languages</h2>
+        <ul class="languages-list">
+            <li>English (Professional)</li>
+            <li>Malayalam (Native)</li>
+        </ul>
     </div>
-    <!-- Header End -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded-circle w-100" src="img/IMG_93282.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h3 class="mb-4">Front End Developer & Graphic Designer</h3>
-                    <p>A self-taught frontend developer & graphic designer who is passionate about computers. An
-                        undergraduate student in BSc computer science.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Bsc Computer Science</h5>
-                            <p class="mb-2"><strong>EMEA ARTS & SCIENCE COLLEGE, KONDOTTY</strong> | <small>2021 -
-                                    2024</small></p>
-                            <p>This college is affiliated to the University of Calicut. The college offers up-to-date,
-                                advanced, and job-oriented programmes in the vast expanding horizon of humanities,
-                                commerece, and science and technology.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Frontend Developer</h5>
-                            <p class="mb-2"><strong>Destinify LLP</strong> | <small>2022 - Present</small></p>
-                            <p>Destinify is a social travel application that conjoints the wanderlusts throughout the
-                                world and kindle their spirit.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Campus Tech Lead</h5>
-                            <p class="mb-2"><strong>TinkerHub</strong> | <small>2022 - Present</small></p>
-                            <p>TinkerHub Foundation is a non-profit initiative aimed at making use of 21st-century
-                                technologies and learning methods to foster a fresh breed of highly skilled young people
-                                empowered with technical and social skills.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Tech Intern</h5>
-                            <p class="mb-2"><strong>Connect EMEA</strong> | <small>2022 - Present</small></p>
-                            <p>A community dedicated to peer-to-peer learning and connecting students with resources. We
-                                provide students with the opportunity to study, grow, and expand their Promethean
-                                capabilities.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Graphic Designer</h5>
-                            <p class="mb-2"><strong>Rootsys International</strong> | <small>Jul 2021 - Oct 2021</small>
-                            </p>
-                            <p>We Rootsys International provide you the best in Digital marketing, Web development and
-                                app development that helps your business to get along with lots of customers and leading
-                                your business to great success.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Qualification End -->
-
-
-
-    <!-- Portfolio Start -->
-    <!-- <div class="container-fluid pt-5 pb-3" id="portfolio">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">All</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Design</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Development</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Marketing</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Portfolio End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
-                        <div id="form_alerts"></div>
-                        <form id="contactForm" action="">
-                            <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" name="name" placeholder="Your Name"
-                                        required="required" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" name="email" placeholder="Your Email"
-                                        required="required" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" name="subject" placeholder="Subject"
-                                    required="required" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" name="message" placeholder="Message"
-                                    required="required"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-primary" type="submit" value="SEND">Send
-                                    Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="container text-center py-5">
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-light btn-social mr-2" href="https://twitter.com/Dilu360"><i
-                        class="fab fa-twitter"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://github.com/dilshad360"><i
-                        class="fab fa-github"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/dilshad360/"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-light btn-social" href="https://www.instagram.com/dilu360/"><i
-                        class="fab fa-instagram"></i></a>
-            </div>
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Dilshad</a>. All Rights Reserved.
-            </p>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <!-- <script src="lib/owlcarousel/owl.carousel.min.js"></script> -->
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <!-- <script src="lib/lightbox/js/lightbox.min.js"></script> -->
-
-    <!-- Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/contact-form.js"></script>
 </body>
 
 </html>

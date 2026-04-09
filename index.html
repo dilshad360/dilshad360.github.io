@@ -4,136 +4,550 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Mohamed Dilshad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <title>Mohamed Dilshad | Premium Web Development</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet" />
     <style>
         :root {
-            --bg: #0e0e0e;
-            --fg: #f1f1f1;
-            --muted: #818181;
+            --bg: #000000ec;
+            --fg: #ffffff;
+            --muted: #a1a1a1;
+            --accent: #00f2ff;
+            --surface: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
-        html,
-        body {
-            background: var(--bg);
-            color: var(--fg);
-            font-family: "Inter", sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            letter-spacing: 0.01em;
-            min-height: 100vh;
-            scroll-behavior: smooth;
-            line-height: 1.8;
+            box-sizing: border-box;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 64px auto;
+        html {
+            background: var(--bg);
+        }
+
+        body {
             background: transparent;
-            border-radius: 0;
-            box-shadow: none;
-            padding: 36px 40px;
-            border: none;
+            color: var(--fg);
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            /* Fallback */
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* Typography */
         h1,
-        h2 {
-            color: var(--fg);
-            margin-bottom: 0.5em;
+        h2,
+        h3 {
+            font-family: "Syne", sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .serif {
+            font-family: "Playfair Display", serif;
+            font-style: italic;
             font-weight: 600;
         }
 
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 0.65em;
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
         }
 
-        h2 {
-            font-size: 1.3rem;
-            margin-top: 3em;
-            margin-bottom: 1.2em;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.45em;
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
         }
 
-        .contact-links {
-            margin: 0.6em 0 2.8em 0;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .contact-links a {
+        nav a {
             color: var(--fg);
             text-decoration: none;
-            margin-right: 1.5em;
-            font-weight: 600;
-            transition: color 0.2s;
+            margin-left: 32px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
         }
 
-        .contact-links a:hover {
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-text {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--fg);
+            color: var(--bg);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background: var(--accent);
+        }
+
+        /* Works Section */
+        .section {
+            padding: 120px 5%;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 64px;
+            text-align: center;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .work-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 400px;
+            backdrop-filter: blur(5px);
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 242, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .work-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.05),
+                    transparent);
+            transition: 0.5s;
+        }
+
+        .work-card:hover::before {
+            left: 100%;
+        }
+
+        .work-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--fg);
+        }
+
+        .work-card p {
+            color: var(--muted);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .work-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .work-link:hover {
             text-decoration: underline;
         }
 
-        .section {
-            margin-bottom: 2.4em;
+        /* Services Specific */
+        .service-card {
+            border-style: dashed;
         }
 
-        .job-role {
-            font-weight: 600;
-            color: var(--fg);
-            font-size: 1.03rem;
-            margin-bottom: 0.18em;
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
 
-        .job-info {
-            color: var(--muted);
-            font-size: 0.98em;
-            margin-bottom: 0.5em;
-        }
-
-        ul {
-            padding-left: 1.5em;
-        }
-
-        li {
-            margin-bottom: 0.75em;
-            line-height: 1.75em;
-        }
-
-        .skills-list,
-        .languages-list {
+        /* Partners Section */
+        .partners-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.9em 2em;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            color: var(--fg);
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            opacity: 0.6;
+            margin-top: 40px;
         }
 
-        .skills-list li,
-        .languages-list li {
-            background: transparent;
-            border-radius: 0;
-            padding: 0.4em 0.95em;
-            font-size: 1.01rem;
+        .partner-logo {
+            font-family: "Syne", sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--fg);
-            letter-spacing: 0.02em;
-            border: 1px solid #ddd;
+            filter: grayscale(1);
+            transition: opacity 0.3s, filter 0.3s;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 5%;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .socials {
+            margin-bottom: 32px;
+        }
+
+        .socials a {
+            color: var(--fg);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Mohamed Dilshad</h1>
-        <div class="contact-links">
-            <span>Software Engineer</span><br />
-            <a href="mailto:dilshad360.dev@gmail.com">dilshad360.dev@gmail.com</a>
+    <canvas id="bg"></canvas>
+
+    <header>
+        <div class="logo">Dilshad.</div>
+        <nav>
+            <a href="#works">Works</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span>Design gives it <span class="serif">soul.</span></span>
+                    <span>Dev gives it <span class="serif">muscle.</span></span>
+                </h1>
+                <p class="hero-sub">Your one-stop solution for high-performance digital experiences. Partners who rock.
+                </p>
+                <a href="#works" class="btn">View My Works</a>
+            </div>
+        </section>
+
+        <section id="works" class="section">
+            <h2 class="section-title">Selected <span class="serif">Works</span></h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div>
+                        <h3>Urban TMT</h3>
+                        <p>A pioneering force in steel manufacturing, producing high-quality TMT bars and rods designed
+                            to drive infrastructure forward with advanced engineering.</p>
+                    </div>
+                    <a href="https://urbantmt.com/" class="work-link">Live Site &rarr;</a>
+                </div>
+                <div class="work-card">
+                    <div>
+                        <h3>MysticOwl</h3>
+                        <p>Creative agency built to help brands grow with clarity and impact through strategy-led
+                            branding and high-quality visual content production.</p>
+                    </div>
+                    <a href="https://mysticowlmedia.com/" class="work-link">Live Site &rarr;</a>
+                </div>
+                <div class="work-card">
+                    <div>
+                        <h3>Shoeden</h3>
+                        <p>Redefining shoe organization with precision-crafted, powder-coated mild steel racks that
+                            combine durability with elegant functionality.</p>
+                    </div>
+                    <a href="https://shoedenkerala.in/" class="work-link">Live Site &rarr;</a>
+                </div>
+                <div class="work-card">
+                    <div>
+                        <h3>Kalamea</h3>
+                        <p>A specialized arts fest live leaderboard system and program results publishing platform built
+                            for high-performance real-time updates.</p>
+                    </div>
+                    <a href="https://kalamea.vercel.app/" class="work-link">Live Site &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="partners-grid">
+                <img src="assets/logos/urbantmt.webp" alt="Urban Steel" class="partner-logo"
+                    style="width: 120px; height: auto;">
+                <img src="assets/logos/owl.webp" alt="MysticOwl" class="partner-logo"
+                    style="width: 120px; height: auto;">
+                <img src="assets/logos/shoeden.png" alt="Shoeden" class="partner-logo"
+                    style="width: 120px; height: auto;">
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title">Service <span class="serif">Offerings</span></h2>
+            <div class="works-grid">
+                <div class="work-card service-card">
+                    <div>
+                        <div class="service-icon">✦</div>
+                        <h3>Web Dev</h3>
+                        <p>Specialized in high-performance applications using Next.js, React, and interactive Three.js
+                            environments.</p>
+                    </div>
+                </div>
+                <div class="work-card service-card">
+                    <div>
+                        <div class="service-icon">◈</div>
+                        <h3>Branding</h3>
+                        <p>Designing modern, minimalist identities that help your brand stand out in a crowded digital
+                            landscape.</p>
+                    </div>
+                </div>
+                <div class="work-card service-card">
+                    <div>
+                        <div class="service-icon">▲</div>
+                        <h3>Growth</h3>
+                        <p>Data-driven strategies including SEO optimization and performance marketing to scale your
+                            reach.</p>
+                    </div>
+                </div>
+            </div>
+            <section id="contact" class="section">
+                <h2 class="section-title">Ready to build <span class="serif">something?</span></h2>
+                <div style="text-align: center;">
+                    <p style="color: var(--muted); margin-bottom: 40px; font-size: 1.2rem;">I am currently available for
+                        new projects and collaborations.</p>
+                    <a href="mailto:dilshad360.dev@gmail.com?subject=Project Inquiry" class="btn">Start a Project
+                        Inquiry</a>
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <div class="socials">
             <a href="https://linkedin.com/in/dilshad360">LinkedIn</a>
             <a href="https://github.com/dilshad360">GitHub</a>
+            <a href="mailto:dilshad360.dev@gmail.com">Email</a>
         </div>
-    </div>
+        <p>&copy; 2026 Mohamed Dilshad. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Three.js Scene Setup (Diamond/Crystal Rock)
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x000000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector('#bg'),
+            antialias: true,
+            alpha: true
+        });
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.setZ(30);
+
+        // Lights
+        const light1 = new THREE.PointLight(0x00f2ff, 15, 200);
+        light1.position.set(20, 20, 20);
+        const light2 = new THREE.PointLight(0x7000ff, 10, 200);
+        light2.position.set(-20, -20, 20);
+        const light3 = new THREE.PointLight(0xffffff, 5, 100); // White highlight
+        light3.position.set(0, 0, 40);
+        const ambient = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(light1, light2, light3, ambient);
+
+        // Particles
+        const starGeo = new THREE.SphereGeometry(0.1, 24, 24);
+        const starMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+        for (let i = 0; i < 200; i++) {
+            const star = new THREE.Mesh(starGeo, starMat);
+            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(150));
+            star.position.set(x, y, z);
+            scene.add(star);
+        }
+
+        // Sparkles (tiny bright bits)
+        const sparkleGeo = new THREE.SphereGeometry(0.05, 8, 8);
+        const sparkleMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        for (let i = 0; i < 50; i++) {
+            const sparkle = new THREE.Mesh(sparkleGeo, sparkleMat);
+            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(30));
+            sparkle.position.set(x, y, z);
+            scene.add(sparkle);
+        }
+
+        // Rare "Rock" Element (Classic Brilliant Cut Diamond Shape)
+        const diamondGeometry = new THREE.Group();
+
+        // Crown (Top part)
+        const crownGeo = new THREE.CylinderGeometry(6, 12, 4, 8);
+        const crownMat = new THREE.MeshPhysicalMaterial({
+            color: 0xffffff,
+            metalness: 0,
+            roughness: 0,
+            transmission: 1,
+            ior: 2.4,
+            thickness: 1,
+            flatShading: true,
+            transparent: true
+        });
+        const crown = new THREE.Mesh(crownGeo, crownMat);
+        crown.position.y = 2;
+
+        // Pavilion (Bottom part)
+        const pavilionGeo = new THREE.CylinderGeometry(12, 0, 12, 8);
+        const pavilion = new THREE.Mesh(pavilionGeo, crownMat);
+        pavilion.position.y = -6;
+
+        diamondGeometry.add(crown, pavilion);
+
+        const wireframeMaterial = new THREE.MeshBasicMaterial({
+            color: 0x00f2ff,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.1
+        });
+        const crownWire = new THREE.Mesh(crownGeo, wireframeMaterial);
+        const pavilionWire = new THREE.Mesh(pavilionGeo, wireframeMaterial);
+        crownWire.position.y = 2;
+        pavilionWire.position.y = -6;
+
+        const rock = new THREE.Group();
+        rock.add(crown, pavilion, crownWire, pavilionWire);
+        scene.add(rock);
+
+        // Animation
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5);
+            mouseY = (e.clientY / window.innerHeight - 0.5);
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (rock) {
+                rock.rotation.x += 0.002;
+                rock.rotation.y += 0.002;
+            }
+
+            camera.position.x += (mouseX * 15 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 15 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
 </body>
 
 </html>
